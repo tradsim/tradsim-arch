@@ -2,22 +2,35 @@
 
 ## TradSim Architectural Documentation
 
+The following systems have been created for the following purpose
+
+- Learning new languages
+- Learning new technologies
+- Learning new architectural patterns
+
+### Languages
+
+- Go
+- C#
+- F#
+
+### Technologies
+
+- AMQP ([RabbitMQ](http://www.rabbitmq.com/))
+- RDBMS ([PostgreSQL](https://www.postgresql.org/))
+- MVC 6
+- SPA ([aurelia.io](http://aurelia.io/))
+- [Docker](https://www.docker.com/)
+- [Kubertnetes]()
+
 ### Architectural Patterns
 
 - [Event Sourcing](https://msdn.microsoft.com/en-us/library/dn589792.aspx)
 - [CQRS](https://msdn.microsoft.com/en-us/library/dn568103.aspx)
 - Event Based Messaging
 - Microservices (REST and Event Based)
+- Distributed Systems
 
-### Technologies
-
-- Go
-- C#
-- F#
-- AMQP ([RabbitMQ](http://www.rabbitmq.com/))
-- RDBMS ([PostgreSQL](https://www.postgresql.org/))
-- MVC 6
-- SPA ([aurelia.io](http://aurelia.io/))
 
 ## Architecture
 
