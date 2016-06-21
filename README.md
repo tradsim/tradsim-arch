@@ -1,2 +1,7 @@
 # tradsim-arch
-Tradsim Architectural Documentaion
+
+## Tradsim Architectural Documentation
+
+### Architecture
+
+### Systems
