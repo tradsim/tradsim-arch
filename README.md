@@ -11,7 +11,7 @@
 
 ### Technologies
 
-- golang
+- Go
 - C#
 - F#
 - AMQP ([RabbitMQ](http://www.rabbitmq.com/))
@@ -27,27 +27,62 @@
 
 ### Query Service - Client
 
+This is the client that sends command to the command service and queries the database for the data.
+
 - ASP.NET core 1.0
 - C#
 - MVC or Aurelia
 
 ### Command Service
 
-- golang
+The system is responsible for sending each command to the message broker (in form of events) and to the exchange.
+
+- Go
 - Rest/HTTP service
 - Event publishing
+
+The following events are published
+
+- OrderCreatePending
+- OrderAmendPending
+- OrderCancelPending
 
 ### Exchange Service
 
-- golang
+The systems tries to emulate a stock exchange. When orders are created, amended, canceled or traded events are published to the message broker.
+
+- Go
 - Rest/HTTP service
 - Event publishing
 
+The following events are published
+
+- OrderCreated
+- OrderAmended
+- OrderCanceled
+- OrderTraded
+
 ### Event Writer Service
 
-- golang
+The system subscribes to the message broker and writes every event to the event store. Finally it publishes a stored event to the message broker.
+
+- Go
 - Event Sourcing (writing to storage)
 - Event publishing
+
+The following events are received
+
+- OrderCreatePending
+- OrderAmendPending
+- OrderCancelPending
+- OrderCreated
+- OrderAmended
+- OrderCanceled
+- OrderTraded
+
+The following events are published
+
+- OrderEventStored
 
 ### Event Aggregator Service
 
@@ -55,17 +90,28 @@
 - Event Sourcing (aggregation)
 - Write to Order Storage
 
+The following events are received
+
+- OrderEventStored
+
+The service is responsible for getting the order events out of the event store and recalculate the order. Finally it saves the order to the orders database.
+
 ### Messaging Broker
 
+The system brokers messages (events) between the other systems.
+
 - RabbitMQ
-- AMQP
 
 ### Event Storage
+
+The events are stored to a table in the RDMBS.
 
 - PostgreSQL
 - Events
 
 ### Order storage
+
+The database holds a relational schema describing users, orders, position etc.
 
 - PostgreSQL
 - Relational Data
