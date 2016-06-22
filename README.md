@@ -31,7 +31,6 @@ The following systems have been created for the following purpose
 - Microservices (REST and Event Based)
 - Distributed Systems
 
-
 ## Architecture
 
 ![Architecture](https://raw.githubusercontent.com/tradsim/tradsim-arch/master/docs/arch/tradsim%20systems.png)
