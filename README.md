@@ -42,9 +42,9 @@ The following systems have been created for the following purpose
 
 This is the client that sends command to the command service and queries the database for the data.
 
-- ASP.NET core 1.0
+- ASP.NET Core
 - C#
-- MVC or Aurelia
+- MVC or Aurelia (Preferable)
 
 ### Command Service
 
@@ -99,6 +99,8 @@ The following events are published
 
 ### Event Aggregator Service
 
+The service is responsible for getting the order events out of the event store and recalculate the order. Finally it saves the order to the orders database.
+
 - F#
 - Event Sourcing (aggregation)
 - Write to Order Storage
@@ -106,8 +108,6 @@ The following events are published
 The following events are received
 
 - OrderEventStored
-
-The service is responsible for getting the order events out of the event store and recalculate the order. Finally it saves the order to the orders database.
 
 ### Messaging Broker
 
